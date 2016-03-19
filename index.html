@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Árdagar</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content= "width=device-width, initial-scale=1">
+  <style>
+body {
+  font-size: 20px;
+  background-color: #dcdcdc;
+}
+
+div.col-1 {
+  float: left;
+}
+div.col-10 {
+  float: left;
+}
+div.subgraph {
+  width: 50%;
+  float: left;
+}
+table {
+  width: 100%;
+  border: 1px solid;
+}
+tbody {
+  border: 5px;
+  width: 100%;
+}
+
+tr {
+  width: 100%;
+}
+
+th {
+  width: 10%;
+}
+th,td{
+  text-align: center;
+}
+
+div.container {
+  width: 100%;
+}
+canvas {
+  max-height: 500px;
+}
+container {
+  width: 100%;
+}
+.col-1 {
+  width: 5%;
+  height: 10px;
+}
+.col-10 {
+  width: 90%;
+}
+.row {
+  width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+
+div.subgraph {
+  width: 100%;
+  float: none;
+}
+h1 {
+  font-size: 20px;
+}
+h2 {
+  font-size: 16px;
+}
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+<div class = "row">
+<div class="col-1">
+</div>
+<div class="col-10">
+  <div>
+    <h1> Heildarstig </h1>
+    <canvas id="canvas0"></canvas>
+  </div>
+  <div class="subgraph">
+    <h2>1-Spanishdanish</h2>
+    <canvas id="canvas1"></canvas>
+   </div>
+   <div class="subgraph">
+     <h2>2-Dansk</h2>
+     <canvas id="canvas2"></canvas>
+   </div>
+   <div class="subgraph">
+     <h2>3-Deautch</h2>
+     <canvas id="canvas3"></canvas>
+   </div>
+   <div class="subgraph">
+     <h2>4-Steindauð líffræði</h2>
+     <canvas id="canvas4"></canvas>
+   </div>
+   <div class="subgraph">
+     <h2>5-Manstu</h2>
+     <canvas id="canvas5"></canvas>
+   </div>
+   <div class="subgraph">
+    <h2>6- Sushi tungumálablanda</h2>
+    <canvas id="canvas6"></canvas>
+   </div>
+   <div class="subgraph">
+    <h2>7-Leyndardómar lotukerfisins</h2>
+    <canvas id="canvas7"></canvas>
+   </div>
+   <div class="subgraph">
+    <h2>8-Sykurpúða cokepong</h2>
+    <canvas id="canvas8"></canvas>
+   </div>
+   <div class="subgraph">
+     <h2>9-Zumba</h2>
+     <canvas id="canvas9"></canvas>
+   </div>
+   <div class="subgraph">
+     <h2>10-Flipcup</h2>
+     <canvas id="canvas10"></canvas>
+   </div>
+   <div class="subgraph">
+     <h2>11-Sphagetti</h2>
+     <canvas id="canvas11"></canvas>
+   </div>
+   <div class="subgraph">
+     <h2>12-Í skóla með Óla og co.</h2>
+     <canvas id="canvas12"></canvas>
+   </div>
+   <div class="subgraph">
+    <h2>13-Sprellsprell</h2>
+    <canvas id="canvas13"></canvas>
+   </div>
+   <div class="subgraph">
+    <h2>14-Skúlptúr&tölvuleikur</h2>
+    <canvas id="canvas14"></canvas>
+   </div>
+   <div class="subgraph">
+    <h2>15-Flóttamenn</h2>
+    <canvas id="canvas15"></canvas>
+   </div>
+   <div class="subgraph">
+    <h2>16-Reikningslist</h2>
+    <canvas id="canvas16"></canvas>
+   </div>
+   <div class="subgraph">
+    <h2>17-Rök</h2>
+    <canvas id="canvas17"></canvas>
+   </div>
+   <div class="subgraph">
+    <h2>18-Hvað er í blaðinu</h2>
+    <canvas id="canvas18"></canvas>
+   </div>
+   <div class="subgraph">
+    <h2>19-English</h2>
+    <canvas id="canvas19"></canvas>
+   </div>
+    <div class="subgraph">
+    <h2>20-Saga</h2>
+    <canvas id="canvas20"></canvas>
+   </div>
+    <div class="subgraph">
+    <h2>21-Enska</h2>
+    <canvas id="canvas21"></canvas>
+   </div>
+   <div class="subgraph">
+    <h2>22-Tennur</h2>
+    <canvas id="canvas22"></canvas>
+   </div>
+   <div class="subgraph">
+    <h2>23-Umönnun</h2>
+    <canvas id="canvas23"></canvas>
+   </div>
+   <div class="subgraph">
+    <h2>24-Vísindi</h2>
+    <canvas id="canvas24"></canvas>
+   </div>
+    <div class="subgraph">
+    <h2>25-Markaðsminni</h2>
+    <canvas id="canvas25"></canvas>
+   </div>
+    <div class="subgraph">
+    <h2>26-Sjúklingurinn</h2>
+    <canvas id="canvas26"></canvas>
+   </div>
+    <div class="subgraph">
+    <h2>27-Kafað í Silfru</h2>
+    <canvas id="canvas27"></canvas>
+   </div>
+</div>
+</div>
+</div>
+<script src="Chart.js">
+</script>
+<script>
+  var barCharts = [];
+  for (var i = 0; i < 28; i++) {
+    barCharts.push({
+    labels : ["gulur", "rauður", "grænn", "blár","bleikur","svartur", "hvítur"],
+    datasets : [
+      {
+        fillColor : "rgba(0,0,0,1)",
+        strokeColor : "rgba(0,0,0,1)",
+        highlightFill: "rgba(0,0,0,0)",
+        highlightStroke: "rgba(0,0,0,1)",
+        data : [10,10,10,10,10,10,10]
+      }
+    ]
+    });
+  }
+  /************************* Data **********************/
+  barCharts[0].datasets[0].data =  [0,0,0,0,0,0,0]; // Þraut 1
+  barCharts[1].datasets[0].data =  [0,0,0,0,0,0,0];// Þraut 2
+  barCharts[2].datasets[0].data =  [0,0,0,0,0,0,0];// Þraut 3
+  barCharts[3].datasets[0].data =  [0,0,0,0,0,0,0];// Þraut 4
+  barCharts[4].datasets[0].data =  [0,0,0,0,0,0,0];// Þraut 5
+  barCharts[5].datasets[0].data =  [0,0,0,0,0,0,0];// Þraut 6
+  barCharts[6].datasets[0].data =  [0,0,0,0,0,0,0];// Þraut 7
+  barCharts[7].datasets[0].data =  [0,0,0,0,0,0,0];// Þraut 8
+  barCharts[8].datasets[0].data =  [0,0,0,0,0,0,0];// Þraut 9
+  barCharts[9].datasets[0].data =  [0,0,0,0,0,0,0];// Þraut 10
+  barCharts[10].datasets[0].data = [0,0,0,0,0,0,0];// Þraut 11
+  barCharts[11].datasets[0].data = [0,0,0,0,0,0,0];// Þraut 12
+  barCharts[12].datasets[0].data = [0,0,0,0,0,0,0];// Þraut 13
+  barCharts[13].datasets[0].data = [0,0,0,0,0,0,0];// Þraut 14
+  barCharts[14].datasets[0].data = [0,0,0,0,0,0,0];// Þraut 15
+  barCharts[15].datasets[0].data = [0,0,0,0,0,0,0];// Þraut 16
+  barCharts[16].datasets[0].data = [0,0,0,0,0,0,0];// Þraut 17
+  barCharts[17].datasets[0].data = [0,0,0,0,0,0,0];// Þraut 18
+  barCharts[18].datasets[0].data = [0,0,0,0,0,0,0];// Þraut 19
+  barCharts[19].datasets[0].data = [0,0,0,0,0,0,0];// Þraut 20
+  barCharts[20].datasets[0].data = [0,0,0,0,0,0,0];// Þraut 21
+  barCharts[21].datasets[0].data = [0,0,0,0,0,0,0];// Þraut 22
+  barCharts[22].datasets[0].data = [0,0,0,0,0,0,0];// Þraut 23
+  barCharts[23].datasets[0].data = [0,0,0,0,0,0,0];// Þraut 24
+  barCharts[24].datasets[0].data = [0,0,0,0,0,0,0];// Þraut 25
+  barCharts[25].datasets[0].data = [0,0,0,0,0,0,0];// Þraut 26
+  barCharts[26].datasets[0].data = [0,0,0,0,0,0,0];// Þraut 27
+  /************************* Data **********************/
+  var total = []
+  for (var i= 0; i < 7; i++) {
+    var sum = 0;
+    for (var j = 0; j < 27; j++) {
+      sum += barCharts[j].datasets[0].data[i]
+    }
+    total.push(sum);
+  }
+  console.log(total);
+  var barChartData = {
+    labels : ["gulur", "rauður", "grænn", "blár","bleikur","svartur", "hvítur"],
+    datasets : [
+      {
+        fillColor : "rgba(0,0,0,1)",
+        strokeColor : "rgba(0,0,0,1)",
+        highlightFill: "rgba(0,0,0,0)",
+        highlightStroke: "rgba(0,0,0,1)",
+        data : total
+      }
+    ]
+  };
+  barCharts.unshift(barChartData);
+  window.onload = function(){
+    for (var k = 0; k < 28; k++) {
+      var ctx = document.getElementById("canvas" + k.toString()).getContext("2d");
+      window.myBar = new Chart(ctx).Bar(barCharts[k], {
+        responsive:true
+      });
+      window.myBar.datasets[0].bars[0].fillColor = "yellow";
+      window.myBar.datasets[0].bars[1].fillColor = "red";
+      window.myBar.datasets[0].bars[2].fillColor = "green";
+      window.myBar.datasets[0].bars[3].fillColor = "blue";
+      window.myBar.datasets[0].bars[4].fillColor = "pink";
+      window.myBar.datasets[0].bars[5].fillColor = "black";
+      window.myBar.datasets[0].bars[6].fillColor = "white";
+      window.myBar.update();
+    }
+
+  }
+
+</script>
+</body>
+</html>

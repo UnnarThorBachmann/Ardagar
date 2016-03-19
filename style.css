@@ -1,0 +1,25 @@
+
+table,
+h1,
+div {
+	padding-left: 10%;
+}
+table {
+	width: 400px;
+	border: 1px solid;
+}
+tbody {
+	border: 5px;
+	width: 80%;
+}
+
+tr {
+	width: 100%;
+}
+
+th {
+  width: 10%;
+}
+th {
+	text-align: center;
+}
